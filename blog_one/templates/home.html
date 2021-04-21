@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}HOME PAGE{% endblock  %}
+
+
+
+{% block body %}
+
+<h1 style="text-align: center; color: red;">HOME</h1>
+{% for blog in blogs %}
+<h1>-----------------------BLOG {{blog.id}}-------------------------------</h1>
+<h1>{{blog.title}}</h1>
+<h1>{{blog.image}}</h1>
+<h1>{{blog.date}}</h1>
+<h1>{{blog.discription}}</h1>
+<img width="800px" height="300px" src="{{blog.image.url}}" alt="">
+<h1><a href="{% url 'detail' blog.id %}">click HERE to read</a></h1>
+
+
+{% endfor %} 
+<h1 style="float: right;"><a style="color:hotpink;" href="{% url 'about' %}">GO TO ABOUT-----></a></h1>
+
+
+{% endblock  %}
